@@ -17,7 +17,7 @@ library(topicmodels,lib.loc="C:/NotBackedUp/R-3.4.3/library")
 
 setwd("C:/NotBackedUp")
 
-mydata<-read.csv("transcript.csv", header = TRUE)
+mydata<-read.csv("example.csv", header = TRUE)
 df <- data.frame(mydata)
 names(mydata)
 head(mydata)
