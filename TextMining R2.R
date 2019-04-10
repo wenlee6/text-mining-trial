@@ -1,8 +1,8 @@
 #############################################################
-## Text Mining for IRD - QA
+## Text Mining  - QA
 ## Author : Wen Lee
 ## 4 April 2019
-## Data Dependencies : E-Corrie Data
+## Data Dependencies : Data
 
 ## Version control : 1.0
 ##############################################################
@@ -32,9 +32,9 @@ library(xlsx)
 ## Raw Data Read in
 ###############################################################
 
-setwd("C:/Users/17wenl/OneDrive - Inland Revenue/Documents/text-mining-trial-master")
+#setwd("C:/Users/17wenl/Documents/text-mining-trial-master")
 
-mydata<-read.csv("eCorrie Jan-Mar 2019.csv", header = TRUE)
+mydata<-read.csv("xxx.csv", header = TRUE)
 df <- data.frame(mydata)
 
 ##checking data if needed
@@ -59,9 +59,9 @@ docs<-iconv(docs, "UTF-8", "WINDOWS-1252")
 
 files<-gsub("[^[:alnum:][:blank:] + ? / \\ - ]", " ", docs)
 files2<-gsub("&#39;m","",files)
-files3 <-gsub("â ","",files2)
-files4 <-gsub("Ä ","",files3)
-files5 <-gsub("ï ","",files3)
+files3 <-gsub("Ã¢ ","",files2)
+files4 <-gsub("Ã„ ","",files3)
+files5 <-gsub("Ã¯ ","",files3)
 
 ##creating corpus which is main doc - should be around 38k rows
 doc.vec <- VectorSource(files4)
